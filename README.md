@@ -1,7 +1,7 @@
 # Refund Multi-Agents (AI-Powered Refund Assistant)
 
 [![Datadog Enabled](https://img.shields.io/badge/Datadog-Enabled-blueviolet.svg)](https://www.datadoghq.com/)
-[![AI Model](https://img.shields.io/badge/AI-Gemini_2.5_Flash-blue.svg)](https://ai.google.dev/)
+[![AI Model](https://img.shields.io/badge/AI-Gemini_3.0_Flash-blue.svg)](https://ai.google.dev/)
 
 Refund Multi-Agents is a professional AI-driven application designed to streamline the process of requesting refunds for travel, hotels, and services. By leveraging a multi-agent architectural approach, it automates the journey from raw evidence extraction to generating professional legal-style refund letters.
 
@@ -24,7 +24,7 @@ Refund Multi-Agents is a professional AI-driven application designed to streamli
 
 - **Frontend**: React 18, Vite, TypeScript
 - **Styling**: Tailwind CSS
-- **AI Core**: Google Gemini SDK (`gemini-2.5-flash`)
+- **AI Core**: Google Gemini SDK (`gemini-3.0-flash`)
 - **Monitoring**: Datadog RUM, Datadog Logs, Session Replay
 - **Database**: IndexedDB (Browser Local Storage)
 

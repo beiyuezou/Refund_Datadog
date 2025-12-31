@@ -38,7 +38,7 @@ export const createRefundGuideChat = (language: 'en' | 'zh' | 'es' = 'en'): Chat
   };
 
   return getAI().chats.create({
-    model: "gemini-2.5-flash",
+    model: "gemini-3.0-flash",
     config: {
       safetySettings: SAFETY_SETTINGS,
       systemInstruction: `You are a friendly and helpful Travel Refund Assistant. 
@@ -159,7 +159,7 @@ export const extractEvidenceAgent = async (
     }
 
     const response = await getAI().models.generateContent({
-      model: "gemini-2.5-flash",
+      model: "gemini-3.0-flash",
       contents: {
         parts: [
           ...fileParts,
@@ -234,7 +234,7 @@ export const policyAnalysisAgent = async (
   `;
 
   const response = await getAI().models.generateContent({
-    model: "gemini-2.5-flash",
+    model: "gemini-3.0-flash",
     contents: prompt,
     config: {
       responseMimeType: "application/json",
@@ -286,7 +286,7 @@ export const letterGeneratorAgent = async (
   `;
 
   const response = await getAI().models.generateContent({
-    model: "gemini-2.5-flash",
+    model: "gemini-3.0-flash",
     contents: prompt,
     config: {
       temperature: 0.7,
