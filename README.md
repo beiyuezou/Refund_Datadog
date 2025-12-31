@@ -31,6 +31,8 @@ Refund Multi-Agents is a professional AI-driven application designed to streamli
 ---
 
 ## 📊 Monitoring & Observability
+<img width="1066" height="626" alt="截屏2026-01-01 上午3 58 11" src="https://github.com/user-attachments/assets/083bed43-9728-46ce-b7ad-a935cb89040d" />
+<img width="1071" height="718" alt="截屏2026-01-01 上午4 02 06" src="https://github.com/user-attachments/assets/3bb23eef-9a28-4a2c-9ef3-61ee5b2e3350" />
 
 This project is instrumented with **Datadog** for comprehensive monitoring:
 
