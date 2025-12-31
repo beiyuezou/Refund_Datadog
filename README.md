@@ -1,9 +1,10 @@
-# Refund Multi-Agents (AI-Powered Refund Assistant)
+# Refund_Datadog (AI-Powered Refund Assistant)
 
 [![Datadog Enabled](https://img.shields.io/badge/Datadog-Enabled-blueviolet.svg)](https://www.datadoghq.com/)
 [![AI Model](https://img.shields.io/badge/AI-Gemini_3.0_Flash-blue.svg)](https://ai.google.dev/)
 
-Refund Multi-Agents is a professional AI-driven application designed to streamline the process of requesting refunds for travel, hotels, and services. By leveraging a multi-agent architectural approach, it automates the journey from raw evidence extraction to generating professional legal-style refund letters.
+Refund_Datadog is a professional AI-driven application designed to streamline the process of requesting refunds for travel, hotels, and services. By leveraging a multi-agent architectural approach, it automates the journey from raw evidence extraction to generating professional legal-style refund letters.
+<img width="1459" height="720" alt="截屏2025-12-20 上午11 00 17" src="https://github.com/user-attachments/assets/4d5afc80-a515-488d-809f-de29bd0ef52c" />
 
 ---
 
