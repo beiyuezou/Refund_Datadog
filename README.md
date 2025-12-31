@@ -1,2 +1,104 @@
-# Refund_Datadog
-add the datadog to monitor
+# Refund Multi-Agents (AI-Powered Refund Assistant)
+
+[![Datadog Enabled](https://img.shields.io/badge/Datadog-Enabled-blueviolet.svg)](https://www.datadoghq.com/)
+[![AI Model](https://img.shields.io/badge/AI-Gemini_2.5_Flash-blue.svg)](https://ai.google.dev/)
+
+Refund Multi-Agents is a professional AI-driven application designed to streamline the process of requesting refunds for travel, hotels, and services. By leveraging a multi-agent architectural approach, it automates the journey from raw evidence extraction to generating professional legal-style refund letters.
+
+---
+
+## 🚀 Core Features
+
+- **Multi-Agent AI Workflow**:
+  - **Evidence Collector**: Extracts receipts, transaction IDs, and merchant details from images, PDFs, and notes.
+  - **Policy Analyst**: Cross-references user issues with airline/hotel policies (powered by Google Search integration).
+  - **Letter Generator**: Produces professional, persuasive refund request letters tailored to the situation.
+- **Voice & Multimedia Support**: Record voice notes or upload images/documents as evidence.
+- **Datadog Integration**: Full Real User Monitoring (RUM), Session Replay, and error tracking for enterprise-grade stability.
+- **Privacy First**: All case data is stored locally using **IndexedDB**. No personal documents are stored on a central server.
+- **Template System**: Ready-to-use templates for common scenarios (Flight cancellation, Hotel hygiene, etc.).
+
+---
+
+## 🛠 Tech Stack
+
+- **Frontend**: React 18, Vite, TypeScript
+- **Styling**: Tailwind CSS
+- **AI Core**: Google Gemini SDK (`gemini-2.5-flash`)
+- **Monitoring**: Datadog RUM, Datadog Logs, Session Replay
+- **Database**: IndexedDB (Browser Local Storage)
+
+---
+
+## 📊 Monitoring & Observability
+
+This project is instrumented with **Datadog** for comprehensive monitoring:
+
+- **RUM (Real User Monitoring)**: Tracks user journeys and performance metrics.
+- **Session Replay**: 20% sampled visual playback to debug UX issues.
+- **AI Performance**: Custom metrics tracking latency and success rates of individual AI agents (`refund.agent.extractEvidence`, etc.).
+- **Error Tracking**: Automated error reporting for both browser and AI service failures.
+
+---
+
+## ⚙️ Getting Started
+
+### 📋 Prerequisites
+
+- Node.js (v18+)
+- npm or yarn
+- Google AI Studio API Key ([Get it here](https://aistudio.google.com/))
+- Datadog Account (Optional)
+
+### 💻 Installation
+
+1. **Clone the repository**:
+
+   ```bash
+   git clone https://github.com/beiyuezou/Refund_Datadog.git
+   cd Refund_Datadog
+   ```
+
+2. **Install dependencies**:
+
+   ```bash
+   npm install
+   ```
+
+3. **Configure Environment Variables**:
+   Create a `.env` file in the root directory based on `.env.example`:
+
+   ```bash
+   cp .env.example .env
+   ```
+
+   Fill in your credentials:
+
+   ```env
+   VITE_GEMINI_API_KEY=your_gemini_api_key
+   VITE_DATADOG_APPLICATION_ID=your_id
+   VITE_DATADOG_CLIENT_TOKEN=your_token
+   VITE_DATADOG_SITE=us5.datadoghq.com
+   ```
+
+4. **Launch Application**:
+
+   ```bash
+   npm run dev
+   ```
+
+---
+
+## 🤖 Multi-Agent Workflow
+
+The system uses a sequential agent flow to ensure high accuracy:
+
+1. **Agent 1 (Extraction)**: Analyzes files/notes -> Returns structured JSON data.
+2. **Agent 2 (Reasoning)**: Uses the extracted data + Web Search -> Generates a policy-backed analysis.
+3. **Agent 3 (Synthesis)**: Uses the analysis -> Crafts the final professional letter.
+
+---
+
+## 📜 License
+
+This project is for educational and practical use. Please ensure you comply with merchant TOS when requesting refunds.
