@@ -4,7 +4,8 @@
 [![AI Model](https://img.shields.io/badge/AI-Gemini_3.0_Flash-blue.svg)](https://ai.google.dev/)
 
 Refund_Datadog is a professional AI-driven application designed to streamline the process of requesting refunds for travel, hotels, and services. By leveraging a multi-agent architectural approach, it automates the journey from raw evidence extraction to generating professional legal-style refund letters.
-![Uploading 截屏2026-01-01 上午5.03.24.png…]()
+<img width="911" height="595" alt="截屏2026-01-01 上午5 03 24" src="https://github.com/user-attachments/assets/ec0a8b00-5c36-4678-b42e-ef6604786895" />
+
 
 
 ---
