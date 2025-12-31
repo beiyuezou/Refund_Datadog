@@ -6,11 +6,22 @@ import { trackError, trackTiming } from "../config/datadog";
 // Initialize Gemini Client Lazily
 let aiInstance: GoogleGenAI | null = null;
 
+/**
+ * Set or refresh the Gemini API Key manually (for demo/judge environments)
+ */
+export const setGeminiKey = (key: string) => {
+  localStorage.setItem('GEMINI_API_KEY', key);
+  aiInstance = new GoogleGenAI({ apiKey: key });
+};
+
 const getAI = () => {
   if (!aiInstance) {
-    const apiKey = process.env.GEMINI_API_KEY || process.env.API_KEY; // Check both
+    const apiKey = process.env.GEMINI_API_KEY ||
+      process.env.API_KEY ||
+      localStorage.getItem('GEMINI_API_KEY');
+
     if (!apiKey) {
-      console.error("Gemini API Key is missing! Please check your .env file or vite.config.ts");
+      console.error("Gemini API Key is missing!");
       throw new Error("Gemini API Key is missing.");
     }
     aiInstance = new GoogleGenAI({ apiKey });

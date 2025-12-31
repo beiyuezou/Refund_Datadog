@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { RefundStep, RefundCase, EvidenceFile, ExtractedEvidence, RefundTemplate } from './types';
-import { extractEvidenceAgent, policyAnalysisAgent, letterGeneratorAgent } from './services/geminiService';
+import { extractEvidenceAgent, policyAnalysisAgent, letterGeneratorAgent, setGeminiKey } from './services/geminiService';
 import { saveCaseToDB, getAllCasesFromDB, deleteCaseFromDB, saveTemplateToDB, getAllTemplatesFromDB, deleteTemplateFromDB } from './services/db';
 import { StepWizard } from './components/StepWizard';
 import { LargeButton } from './components/LargeButton';
@@ -284,6 +284,24 @@ const App: React.FC = () => {
   const [appLanguage, setAppLanguage] = useState<'en' | 'zh' | 'es'>('en');
 
   // Error Handling State
+  const [isDeleting, setIsDeleting] = useState<string | null>(null);
+  const [showApiKeyModal, setShowApiKeyModal] = useState(false);
+  const [tempApiKey, setTempApiKey] = useState('');
+
+  // Check for API Key on load
+  useEffect(() => {
+    const hasKey = process.env.GEMINI_API_KEY || process.env.API_KEY || localStorage.getItem('GEMINI_API_KEY');
+    if (!hasKey) {
+      setShowApiKeyModal(true);
+    }
+  }, []);
+
+  const handleSaveApiKey = () => {
+    if (tempApiKey.trim()) {
+      setGeminiKey(tempApiKey.trim());
+      setShowApiKeyModal(false);
+    }
+  };
   const [error, setError] = useState<string | null>(null);
   const [errorContext, setErrorContext] = useState<'ANALYSIS' | 'LETTER' | 'UPDATE_POLICY' | null>(null);
   const [uploadWarning, setUploadWarning] = useState<string | null>(null);
